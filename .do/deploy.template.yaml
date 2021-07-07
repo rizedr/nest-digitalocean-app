@@ -1,0 +1,45 @@
+spec:
+  name: nest-digitalocean-app
+  region: nyc
+  services:
+  - name: nest-digitalocean-app
+    environment_slug: node-js
+    github:
+      branch: main
+      repo: mtfuller/nest-digitalocean-app
+    source_dir: /
+    build_command: npm run build
+    run_command: npm start
+    http_port: 8080
+    instance_count: 1
+    instance_size_slug: basic-xs
+    routes:
+    - path: /
+    envs:
+    - key: PORT
+      scope: RUN_AND_BUILD_TIME
+      value: "3030"
+    - key: DB_HOST
+      scope: RUN_AND_BUILD_TIME
+      value: ${db.HOSTNAME}
+    - key: DB_USER
+      scope: RUN_AND_BUILD_TIME
+      value: ${db.USERNAME}
+    - key: DB_PASS
+      scope: RUN_AND_BUILD_TIME
+      value: ${db.PASSWORD}
+    - key: DB_DATABASE
+      scope: RUN_AND_BUILD_TIME
+      value: ${db.DATABASE}
+    - key: DB_PORT
+      scope: RUN_AND_BUILD_TIME
+      value: ${db.PORT}
+    - key: DB_CA_CERT
+      scope: RUN_AND_BUILD_TIME
+      value: ${db.CA_CERT}
+  databases:
+  - engine: PG
+    name: db
+    num_nodes: 1
+    size: db-s-dev-database
+    version: "12"
