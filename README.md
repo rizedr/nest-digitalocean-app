@@ -46,7 +46,7 @@ $ npm run test:cov
 
 The easiest way to deploy this app and try it out is to click this button.
 
-[![Deploy to DO](https://www.deploytodo.com/do-btn-blue.svg)](https://cloud.digitalocean.com/apps/new?repo=https://github.com/mtfuller/nest-digitalocean-app/tree/main&refcode=012f39345103)
+[![Deploy to DO](https://www.deploytodo.com/do-btn-blue.svg)](https://cloud.digitalocean.com/apps/new?repo=https://github.com/rizedr/nest-digitalocean-app/tree/main&refcode=012f39345103)
 
 **⚠️ Note: Clicking this button may result in billing charges for using DigitalOcean services.**
 
